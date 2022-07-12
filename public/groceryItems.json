@@ -1,0 +1,17 @@
+{
+    "groceryListArray":[
+        {
+            "name":"Brocolli",
+            "category":"Produce",
+            "acquiredFrom":[
+                {
+                    "storeName":"Ralphs",
+                    "description":"whole heads, need to be washed and cut",
+                    "cost":1.25,
+                    "forAmount":1,
+                    "unit":"Pound"
+                }
+            ]
+        }
+    ]
+}
