@@ -1,0 +1,55 @@
+body {
+    background-color:rgb(162, 166, 175);
+}
+
+#masterGroceryList {
+    background-color: rgb(123, 165, 243);
+    display:flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+}
+
+.category {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+/* Master List Configs */
+
+#masterListDisplay {
+    color: purple
+}
+
+.groceryItem {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+}
+
+.groceryItemNeeded:hover {
+    background-color: rgb(24, 223, 100);
+}
+
+.groceryItemAcquireFromStore {
+    background-color: green;
+    display: flex;
+    gap: 5px;
+    font-size: 12px;
+}
+
+/* Add New Items Panel */
+
+#addNewGroceryItemPanel {
+    background-color: rgb(18, 95, 18);
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
+
+/* Current List Configs */
+
+#currentGroceryList {
+    float: right;
+    width: 50%;
+}

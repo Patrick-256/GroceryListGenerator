@@ -9,6 +9,48 @@
     <body onload="loadGroceryList(); ">
         <h1>Welcome to Patricks Grocery List</h1>
 
+        <div id="masterGroceryList">
+            <div id="masterListDisplay">
+                <div class="category">Produce</div>
+                <div class="groceryItem">
+                    <div class="groceryItemNeeded" onclick="addGroceryItemToCurrentList()">[ ]</div>
+                    <div class="groceryItemName">Brocolli</div>
+                    <div class="groceryItemAcquireFromArray">
+                        <div class="groceryItemAcquireFromStore">
+                            <div class="groceryItemAcquireFromStoreName">Costco</div>
+                            <div class="groceryItemAcquireFromStorePrice">$6.99</div>
+                            <div class="groceryItemAcquireFromStoreAmount">64</div>
+                            <div class="groceryItemAcquireFromStoreUnit">oz</div>
+                        </div>
+                        <div class="groceryItemAcquireFromStore">
+                            <div class="groceryItemAcquireFromStoreName">Ralphs</div>
+                            <div class="groceryItemAcquireFromStorePrice">$1.25</div>
+                            <div class="groceryItemAcquireFromStoreAmount">1</div>
+                            <div class="groceryItemAcquireFromStoreUnit">Pound</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="addNewGroceryItemPanel">
+                <label class="addNewItemLabel">New Item Name:</label><input id="addNewItemName" class="addNewItemInput">
+                <label class="addNewItemLabel">Category:</label><select id="addNewItemCategory" class="addNewItemInput"> 
+                    <option>Produce</option>
+                    <option>Dairy</option>
+                    <option>Refrigerated</option>
+                </select>
+                <label class="addNewItemLabel">Store:</label><input id="addNewItemStore" class="addNewItemInput">
+                <label class="addNewItemLabel">Cost:</label><input id="addNewItemCost" class="addNewItemInput">
+                <label class="addNewItemLabel">For Amount:</label><input id="addNewItemAmount" class="addNewItemInput">
+                <label class="addNewItemLabel">Unit:</label><input id="addNewItemUnit" class="addNewItemInput">
+                <label class="addNewItemLabel">Description:</label><input id="addNewItemDescription" class="addNewItemInput"> 
+                <button class="addNewItemButton" onclick="addNewItemButtonHasBeenClicked()">Add New Item</button>
+                <button class="addNewItemButton" onclick="addNewStoreToItemHasBeenClicked()">Add Store To Item</button>
+            </div>
+        </div>
+        <div id="currentGroceryList">
+
+        </div>
+
 
 
 

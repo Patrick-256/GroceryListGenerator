@@ -1,0 +1,69 @@
+{
+    "refrigeratedProduce": {
+        "brocolli": {
+            "needed": true,
+            "acquiredFrom": {
+                "ralphs": {
+                    "description": "whole heads, need to be washed and cut",
+                    "cost": 1.28,
+                    "forAmount": 1,
+                    "unit": "pound"
+                },
+                "costco": {
+                    "description": "washed and precut in large bag",
+                    "cost": 6.99,
+                    "forAmount": 64,
+                    "unit": "oz"
+                }
+            }
+        }
+    },
+    "Dairy": {
+        "Soy Milk": {
+            "needed": false,
+            "acquiredFrom": {
+                "Ralphs": {
+                    "description": "carton_of_milk",
+                    "cost": "3.99",
+                    "forAmount": "0.5",
+                    "unit": "gallon"
+                }
+            }
+        },
+        "Soy_Milk": {
+            "needed": false,
+            "acquiredFrom": {
+                "Ralphs": {
+                    "description": "cartonOfMilk",
+                    "cost": "3.99",
+                    "forAmount": "0.5",
+                    "unit": "gal"
+                }
+            }
+        }
+    },
+    "canned_goods": {
+        "refried_beans": {
+            "needed": false,
+            "acquiredFrom": {
+                "ralphs": {
+                    "description": "1_can_of_beans",
+                    "cost": 1.49,
+                    "forAmount": 16,
+                    "unit": "oz"
+                }
+            }
+        },
+        "refried_beans1": {
+            "needed": false,
+            "acquiredFrom": {
+                "ralphs": {
+                    "description": "1_can_of_beans",
+                    "cost": 1.49,
+                    "forAmount": 16,
+                    "unit": "oz"
+                }
+            }
+        }
+    }
+}
