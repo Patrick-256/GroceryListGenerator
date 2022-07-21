@@ -6,8 +6,7 @@
                 "Ralphs": {
                     "cost": "8.99",
                     "forAmount": "10",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
@@ -17,8 +16,7 @@
                 "Ralphs": {
                     "cost": "7.99",
                     "forAmount": "4",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
@@ -29,15 +27,7 @@
                     "description": "1_jar",
                     "cost": "1.69",
                     "forAmount": "24",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "3_45oz jars",
-                    "cost": "9.99",
-                    "forAmount": "135",
-                    "unit": "oz",
-                    "preferredStore": "false"
+                    "unit": "oz"
                 }
             }
         },
@@ -48,8 +38,7 @@
                     "description": "great_for pizza!",
                     "cost": "1.59",
                     "forAmount": "20",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         }
@@ -62,15 +51,7 @@
                     "description": "1_jar",
                     "cost": "6.49",
                     "forAmount": "14",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "big_jar",
-                    "cost": "18.99",
-                    "forAmount": "84",
-                    "unit": "oz",
-                    "preferredStore": "false"
+                    "unit": "oz"
                 }
             }
         },
@@ -80,46 +61,29 @@
                 "Ralphs": {
                     "cost": "8.49",
                     "forAmount": "17",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "2_Liter Bottle",
-                    "cost": "22.99",
-                    "forAmount": "67.6",
-                    "unit": "oz",
-                    "preferredStore": "false"
+                    "unit": "oz"
                 }
             }
         },
         "Baking_chocolate": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "description": "bar",
                     "cost": "2.99",
                     "forAmount": "3.5",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
         "Chocolate_Chips": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "description": "Ghirardelli_60 percent",
                     "cost": "3.99",
                     "forAmount": "10",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "Kirkland_51percent",
-                    "cost": "12.99",
-                    "forAmount": "72",
-                    "unit": "oz",
-                    "preferredStore": "false"
+                    "unit": "oz"
                 }
             }
         },
@@ -130,8 +94,7 @@
                     "description": "bottle",
                     "cost": "19.99",
                     "forAmount": "16",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -142,8 +105,7 @@
                     "description": "jar",
                     "cost": "7.99",
                     "forAmount": "16",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -154,8 +116,7 @@
                     "description": "bottle",
                     "cost": "5.99",
                     "forAmount": "16",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -166,8 +127,7 @@
                     "description": "container",
                     "cost": "1.49",
                     "forAmount": "26",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -177,8 +137,7 @@
                 "Costco": {
                     "cost": "9.50",
                     "forAmount": "25",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
@@ -188,8 +147,7 @@
                 "Ralphs": {
                     "cost": "2.79",
                     "forAmount": "32",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -200,29 +158,7 @@
                     "description": "private_selection",
                     "cost": "15.99",
                     "forAmount": "32",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "1_Liter jug",
-                    "cost": "14.49",
-                    "forAmount": "33.8",
-                    "unit": "oz",
-                    "preferredStore": "false"
-                }
-            }
-        }
-    },
-    "Misc_Items": {
-        "Dish_Soap": {
-            "needed": true,
-            "acquiredFrom": {
-                "Ralphs": {
-                    "description": "bottle",
-                    "cost": "2.29",
-                    "forAmount": "24",
-                    "unit": "oz",
-                    "preferredStore": "true"
+                    "unit": "oz"
                 }
             }
         }
@@ -235,26 +171,17 @@
                     "description": "6_packets, about 25 dollars",
                     "cost": "2.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
-                },
-                "Ralphs": {
-                    "description": "crazy_expensive",
-                    "cost": "5.99",
-                    "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": false
+                    "unit": "pound"
                 }
             }
         },
         "Salmon": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "12.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": false
+                    "unit": "pound"
                 }
             }
         }
@@ -267,8 +194,7 @@
                     "description": "simple_truth",
                     "cost": "2.49",
                     "forAmount": "0.5",
-                    "unit": "gal",
-                    "preferredStore": true
+                    "unit": "gal"
                 }
             }
         },
@@ -278,34 +204,18 @@
                 "Costco": {
                     "cost": "5.99",
                     "forAmount": "48",
-                    "unit": "oz",
-                    "preferredStore": false
-                },
-                "Ralphs": {
-                    "description": "chobani",
-                    "cost": "5.99",
-                    "forAmount": "32",
-                    "unit": "oz",
-                    "preferredStore": "true"
+                    "unit": "oz"
                 }
             }
         },
         "Cheddar_Cheese": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "description": "block",
                     "cost": "7.99",
                     "forAmount": "32",
-                    "unit": "oz",
-                    "preferredStore": false
-                },
-                "Costco": {
-                    "description": "block",
-                    "cost": "17.89",
-                    "forAmount": "5",
-                    "unit": "pound",
-                    "preferredStore": "true"
+                    "unit": "oz"
                 }
             }
         },
@@ -315,8 +225,7 @@
                 "Ralphs": {
                     "cost": "4.99",
                     "forAmount": "8",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         },
@@ -327,8 +236,7 @@
                     "description": "4_cuboids",
                     "cost": "3.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
@@ -339,8 +247,7 @@
                     "description": "Kroger_brand",
                     "cost": "2.29",
                     "forAmount": "8",
-                    "unit": "oz",
-                    "preferredStore": true
+                    "unit": "oz"
                 }
             }
         }
@@ -353,8 +260,7 @@
                     "description": "sale_price",
                     "cost": "1.50",
                     "forAmount": "1",
-                    "unit": "ExtraLargeAvocado",
-                    "preferredStore": true
+                    "unit": "ExtraLargeAvocado"
                 }
             }
         },
@@ -365,8 +271,7 @@
                     "description": "white_onions",
                     "cost": "0.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
@@ -376,32 +281,29 @@
                 "Ralphs": {
                     "cost": "1.49",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         }
     },
     "Refrigerated_Produce": {
         "Broccoli_Crowns": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "1.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
         "Celery": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "1.99",
                     "forAmount": "1",
-                    "unit": "bunch",
-                    "preferredStore": true
+                    "unit": "bunch"
                 }
             }
         },
@@ -411,8 +313,7 @@
                 "Ralphs": {
                     "cost": "0.99",
                     "forAmount": "1",
-                    "unit": "pepper",
-                    "preferredStore": true
+                    "unit": "pepper"
                 }
             }
         },
@@ -422,8 +323,7 @@
                 "Ralphs": {
                     "cost": "3.29",
                     "forAmount": "2",
-                    "unit": "pounds",
-                    "preferredStore": true
+                    "unit": "pounds"
                 }
             }
         },
@@ -433,8 +333,7 @@
                 "Ralphs": {
                     "cost": "4.79",
                     "forAmount": "16",
-                    "unit": "oz",
-                    "preferredStore": false
+                    "unit": "oz"
                 }
             }
         },
@@ -445,8 +344,7 @@
                     "description": "on_the vine",
                     "cost": "2.99",
                     "forAmount": "4",
-                    "unit": "tomato",
-                    "preferredStore": true
+                    "unit": "tomato"
                 }
             }
         },
@@ -456,19 +354,17 @@
                 "Ralphs": {
                     "cost": "1.99",
                     "forAmount": "1",
-                    "unit": "pound",
-                    "preferredStore": true
+                    "unit": "pound"
                 }
             }
         },
         "Spinach": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "1.49",
                     "forAmount": "1",
-                    "unit": "bunch",
-                    "preferredStore": true
+                    "unit": "bunch"
                 }
             }
         },
@@ -479,52 +375,27 @@
                     "description": "bag_of peeled garlic",
                     "cost": "2.49",
                     "forAmount": "6",
-                    "unit": "oz",
-                    "preferredStore": true
-                },
-                "Costco": {
-                    "description": "peeled_garlic",
-                    "cost": "14.99",
-                    "forAmount": "3",
-                    "unit": "pound",
-                    "preferredStore": "false"
+                    "unit": "oz"
                 }
             }
         },
         "Eggs": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "3.49",
                     "forAmount": "12",
-                    "unit": "egg",
-                    "preferredStore": false
-                },
-                "Costco": {
-                    "description": "5_dozen crate",
-                    "cost": "9.49",
-                    "forAmount": "60",
-                    "unit": "ct.",
-                    "preferredStore": "true"
+                    "unit": "egg"
                 }
             }
         },
         "Blueberries": {
-            "needed": true,
+            "needed": false,
             "acquiredFrom": {
                 "Ralphs": {
-                    "description": "_ ",
                     "cost": "7.99",
                     "forAmount": "18",
-                    "unit": "oz",
-                    "preferredStore": "true"
-                },
-                "Costco": {
-                    "description": "_",
-                    "cost": "8.49",
-                    "forAmount": "18",
-                    "unit": "oz",
-                    "preferredStore": false
+                    "unit": "oz"
                 }
             }
         }

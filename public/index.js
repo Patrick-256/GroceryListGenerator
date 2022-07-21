@@ -1,3 +1,4 @@
+
 async function loadGroceryList()
 {
     //ask server for the grocery list
@@ -32,9 +33,11 @@ async function loadGroceryList()
             if(MasterGroceryList[cate][item].needed == true) {
                 newGroceryItemNeeded.textContent = ":)";
                 newGroceryItemNeeded.style.backgroundColor = "green";
+                newGroceryItemNeeded.onclick = function() { toggleGroceryItemToCurrentList(cate,item,false) }
             } else {
                 newGroceryItemNeeded.textContent = "-_-"
                 newGroceryItemNeeded.style.backgroundColor = "blue";
+                newGroceryItemNeeded.onclick = function() { toggleGroceryItemToCurrentList(cate,item,true) }
             }
             newGroceryItem.appendChild(newGroceryItemNeeded);
 
@@ -60,13 +63,11 @@ async function loadGroceryList()
                 var newGroceryItemAcquiredFromStoreName = document.createElement("div");
                 newGroceryItemAcquiredFromStoreName.className = "groceryItemAcquireFromStoreName";
                 newGroceryItemAcquiredFromStoreName.textContent = stor;
-                newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStoreName);
-
-                //description
-                var newGroceryItemAcquiredFromStoreDescription = document.createElement("div");
-                newGroceryItemAcquiredFromStoreDescription.className = "groceryItemAcquireFromStoreDescription";
-                newGroceryItemAcquiredFromStoreDescription.textContent = MasterGroceryList[cate][item].acquiredFrom[stor].description;
-                newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStoreDescription);
+                //make the store name text green if its the preferred store
+                if(MasterGroceryList[cate][item].acquiredFrom[stor].preferredStore == true || MasterGroceryList[cate][item].acquiredFrom[stor].preferredStore == 'true') {
+                    newGroceryItemAcquiredFromStoreName.style.color = 'green';
+                }
+                newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStoreName);  
 
                 //store price
                 var newGroceryItemAcquiredFromStorePrice = document.createElement("div");
@@ -86,16 +87,55 @@ async function loadGroceryList()
                 newGroceryItemAcquiredFromStoreUnit.textContent = MasterGroceryList[cate][item].acquiredFrom[stor].unit;
                 newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStoreUnit);
 
+                //cost per unit calculation
+                var newGroceryItemCostPerUnit = document.createElement("div");
+                newGroceryItemCostPerUnit.className = "GroceryItemCostPerUnit";
+                var costPerUnit = Number(MasterGroceryList[cate][item].acquiredFrom[stor].cost) / Number(MasterGroceryList[cate][item].acquiredFrom[stor].forAmount)
+                newGroceryItemCostPerUnit.textContent = `($${costPerUnit.toFixed(2)}/${MasterGroceryList[cate][item].acquiredFrom[stor].unit})`;
+                newGroceryItemAcquiredFromStore.appendChild(newGroceryItemCostPerUnit);
+
+
+
+                //description
+                var newGroceryItemAcquiredFromStoreDescription = document.createElement("div");
+                newGroceryItemAcquiredFromStoreDescription.className = "groceryItemAcquireFromStoreDescription";
+                var descriptionTextContent = String(MasterGroceryList[cate][item].acquiredFrom[stor].description);
+                if(descriptionTextContent == undefined || descriptionTextContent == 'undefined') {
+                    descriptionTextContent = "_";
+                }
+                newGroceryItemAcquiredFromStoreDescription.textContent = descriptionTextContent.replace('_',' ');
+                newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStoreDescription);
+
 
                 //add this store to the array of stores
                 newGroceryItemAcquireFromArray.appendChild(newGroceryItemAcquiredFromStore);
 
             }
             newGroceryItem.appendChild(newGroceryItemAcquireFromArray);
+
             //Add this item to the master list
-            document.getElementById("masterListDisplay").appendChild(newGroceryItem)
-        }
-        
+            document.getElementById("masterListDisplay").appendChild(newGroceryItem);
+
+            //if this item is needed, add it to the current list aswell.
+            if(MasterGroceryList[cate][item].needed == true) {
+                //append the element into its preferred store
+                //find the preferred stope
+                var preferredStoreName = 'blankStore';
+                for(const theStore in MasterGroceryList[cate][item].acquiredFrom)
+                {
+                    if(MasterGroceryList[cate][item].acquiredFrom[theStore].preferredStore == true ||
+                    MasterGroceryList[cate][item].acquiredFrom[theStore].preferredStore == 'true')
+                    {
+                        preferredStoreName = theStore;
+                        break;
+                    } else {
+                        preferredStoreName = theStore;
+                    }
+                }
+                document.getElementById(`getFrom_${preferredStoreName}`).appendChild(newGroceryItem.cloneNode(true));
+                document.getElementById("masterListDisplay").appendChild(newGroceryItem);
+            }
+        }    
     }
 }
 
@@ -110,16 +150,49 @@ function addNewItemButtonHasBeenClicked()
     var newItemAmount = document.getElementById("addNewItemAmount").value;
     var newItemUnit = document.getElementById("addNewItemUnit").value;
     var newItemDescription = document.getElementById("addNewItemDescription").value;
+    var preferredStore = document.getElementById("itemPreferredStoreCheckBox").value;
+    
+    if(preferredStore == true || preferredStore == 'true') {
+        preferredStore = "true";
+    } else {
+        preferredStore = "false";
+    }
 
     //communicate with the server to add the new item
-    var IOlink = `/addNewGroceryItemToMaster/${newItemName}/${newItemCategory}/${newItemStore}/${newItemCost}/${newItemAmount}/${newItemUnit}/${newItemDescription}?`;
+    var IOlink = `/addNewGroceryItemToMaster/${newItemName.replace(' ', '_')}/${newItemCategory}/${newItemStore.replace(' ', '_')}/${newItemCost}/${newItemAmount}/${newItemUnit}/${newItemDescription.replace(' ', '_')}/${preferredStore}/true?`;
+    document.location = IOlink;
+}
+
+//add store to a grocery item
+function addNewStoreToItemHasBeenClicked()
+{
+    //get the input data
+    var newItemName = document.getElementById("addNewItemName").value;
+    var newItemCategory = document.getElementById("addNewItemCategory").value;
+    var newItemStore = document.getElementById("addNewItemStore").value;
+    var newItemCost = document.getElementById("addNewItemCost").value;
+    var newItemAmount = document.getElementById("addNewItemAmount").value;
+    var newItemUnit = document.getElementById("addNewItemUnit").value;
+    var newItemDescription = document.getElementById("addNewItemDescription").value;
+    var preferredStore = document.getElementById("itemPreferredStoreCheckBox").value;
+    if(preferredStore == true || preferredStore == 'true') {
+        preferredStore = "true";
+    } else {
+        preferredStore = "false";
+    }
+
+    //communicate with the server to add the new item
+    var IOlink = `/addNewGroceryItemToMaster/${newItemName.replace(' ', '_')}/${newItemCategory}/${newItemStore.replace(' ', '_')}/${newItemCost}/${newItemAmount}/${newItemUnit}/${newItemDescription.replace(' ', '_')}/${preferredStore}/false?`;
     document.location = IOlink;
 }
 
 //add grocery item to current list
-function addGroceryItemToCurrentList()
+function toggleGroceryItemToCurrentList(category,itemName,isNeeded)
 {
-    
+    console.log(`Toggling this the needed value for ${itemName} to ${isNeeded}`);
+
+    var IOlink = `/setGroceryItemNeeded/${category}/${itemName}/${isNeeded}?`;
+    document.location = IOlink;
 }
 
 

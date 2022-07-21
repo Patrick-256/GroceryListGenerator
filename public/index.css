@@ -33,7 +33,7 @@ body {
 }
 
 .groceryItemAcquireFromStore {
-    background-color: green;
+    background-color: rgb(153, 173, 184);
     display: flex;
     gap: 5px;
     font-size: 12px;

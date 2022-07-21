@@ -34,34 +34,84 @@ async function runMainProgram()
         res.send(reply);
     }
 
-    //add new grocery item from client
-    app.get('/addNewGroceryItemToMaster/:newItemName/:category/:store/:cost/:amount/:unit/:description?', addNewGroceryItemToMaster);
+    //add new grocery item from client, also adds new stores to items
+    app.get('/addNewGroceryItemToMaster/:newItemName/:category/:store/:cost/:amount/:unit/:description/:preferredStore/:boolNewItem?', addNewGroceryItemToMaster);
 
     async function addNewGroceryItemToMaster(req,res) {
         var data = req.params;
         console.log(`adding ${data.newItemName} to master grocery list!`)
 
-        groceryItemsMasterList[data.category][data.newItemName] = 
-        {
-            needed: false,
-            acquiredFrom: {}
-        };
+        if(data.boolNewItem == 'true') {
+            groceryItemsMasterList[data.category][data.newItemName] = 
+            {
+                needed: false,
+                acquiredFrom: {}
+            };
+        }
+        
         groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store] = {};
         groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].description = data.description;
         groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].cost = data.cost;
         groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].forAmount = data.amount;
         groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].unit = data.unit;
+        groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].preferredStore = data.preferredStore;
+
+        //if this item already existed, and if the store being added is the preferred store, set the preferred store value 
+        //of other stores to false
+        if(data.boolNewItem != 'true') {
+            if(data.preferredStore == 'true') {
+                //set all stores to false
+                for(const storeAcquredFrom in groceryItemsMasterList[data.category][data.newItemName].acquiredFrom)
+                {
+                    groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[storeAcquredFrom].preferredStore = false;
+                }
+                //set this store to true
+                groceryItemsMasterList[data.category][data.newItemName].acquiredFrom[data.store].preferredStore = data.preferredStore;
+            }
+        }
 
         //save master grocery list
         await WriteFilePromise('programData/groceryItems.json',JSON.stringify(groceryItemsMasterList,null,4))
 
-        res.send(`added ${data.newItemName} to master grocery list!`)
+        //res.send(`added ${data.newItemName} to master grocery list!`)
+        res.redirect('/index.html')
     }
 
     //add another store to a grocery item - can also modify an existing store
+    //app.get('/addAnotherStoreToItem/:category/:itemName/:store/:cost/:amount/:unit/:description?'
     
 
+    //set a grocery item as needed
+    app.get('/setGroceryItemNeeded/:category/:itemName/:isNeeded?', setGroceryItemNeeded);
+
+    async function setGroceryItemNeeded(req,res) {
+        var data = req.params;
+        console.log(`setting ${data.itemName} isNeeded to ${data.isNeeded}`)
+        var reply = 'blankReply';
+
+        if(data.isNeeded == 'true') {
+            groceryItemsMasterList[data.category][data.itemName].needed = true;
+            reply = `set ${data.itemName} isNeeded to ${data.isNeeded}`
+            
+        }
+        else if(data.isNeeded == 'false') {
+            groceryItemsMasterList[data.category][data.itemName].needed = false;
+            reply = `set ${data.itemName} isNeeded to ${data.isNeeded}`
+            
+        } else {
+            //trying to set to an unexpected value
+            reply = `value ${data.isNeeded} is not true or false!`
+             
+        }
+
+        //save master list
+        await WriteFilePromise('programData/groceryItems.json',JSON.stringify(groceryItemsMasterList,null,4))
+        //res.send(reply) 
+        res.redirect('/index.html')
+    }
+
     //delete a grocery item from client
+
 }
 
 

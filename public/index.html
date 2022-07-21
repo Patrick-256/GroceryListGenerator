@@ -6,49 +6,60 @@
         <link rel="stylesheet" href="index.css">
         <title>Grocery Items</title>
     </head>
-    <body onload="loadGroceryList(); ">
+    <body onload="loadGroceryList()">
         <h1>Welcome to Patricks Grocery List</h1>
 
         <div id="masterGroceryList">
             <div id="masterListDisplay">
-                <div class="category">Produce</div>
-                <div class="groceryItem">
-                    <div class="groceryItemNeeded" onclick="addGroceryItemToCurrentList()">[ ]</div>
-                    <div class="groceryItemName">Brocolli</div>
-                    <div class="groceryItemAcquireFromArray">
-                        <div class="groceryItemAcquireFromStore">
-                            <div class="groceryItemAcquireFromStoreName">Costco</div>
-                            <div class="groceryItemAcquireFromStorePrice">$6.99</div>
-                            <div class="groceryItemAcquireFromStoreAmount">64</div>
-                            <div class="groceryItemAcquireFromStoreUnit">oz</div>
-                        </div>
-                        <div class="groceryItemAcquireFromStore">
-                            <div class="groceryItemAcquireFromStoreName">Ralphs</div>
-                            <div class="groceryItemAcquireFromStorePrice">$1.25</div>
-                            <div class="groceryItemAcquireFromStoreAmount">1</div>
-                            <div class="groceryItemAcquireFromStoreUnit">Pound</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- this is where the grocery item elements get inserted -->
             </div>
             <div id="addNewGroceryItemPanel">
-                <label class="addNewItemLabel">New Item Name:</label><input id="addNewItemName" class="addNewItemInput">
                 <label class="addNewItemLabel">Category:</label><select id="addNewItemCategory" class="addNewItemInput"> 
-                    <option>Produce</option>
+                    <option>Pantry_Items</option>
+                    <option>Cooking_Supplies</option>
+                    <option>Misc_Items</option>
+                    <option>Meats</option>
                     <option>Dairy</option>
-                    <option>Refrigerated</option>
+                    <option>Non-Refrigerated_Produce</option>
+                    <option>Refrigerated_Produce</option>
                 </select>
-                <label class="addNewItemLabel">Store:</label><input id="addNewItemStore" class="addNewItemInput">
+                <label class="addNewItemLabel">Item Name:</label><input id="addNewItemName" class="addNewItemInput">
+                <label class="addNewItemLabel">Store:</label><select id="addNewItemStore" class = "addNewItemInput">
+                    <option>Costco</option>
+                    <option>Ralphs</option>
+                    <option>SmartAndFinal</option>
+                </select>
                 <label class="addNewItemLabel">Cost:</label><input id="addNewItemCost" class="addNewItemInput">
                 <label class="addNewItemLabel">For Amount:</label><input id="addNewItemAmount" class="addNewItemInput">
-                <label class="addNewItemLabel">Unit:</label><input id="addNewItemUnit" class="addNewItemInput">
+                <label class="addNewItemLabel">Unit:</label><select id="addNewItemUnit" class="addNewItemInput">
+                    <option>oz</option>
+                    <option>pound</option>
+                    <option>gal</option>
+                    <option>L</option>
+                    <option>ct.</option>
+                </select> 
                 <label class="addNewItemLabel">Description:</label><input id="addNewItemDescription" class="addNewItemInput"> 
+                <label class="addNewItemLabel">Preferred Store</label><select id="itemPreferredStoreCheckBox">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+                
                 <button class="addNewItemButton" onclick="addNewItemButtonHasBeenClicked()">Add New Item</button>
                 <button class="addNewItemButton" onclick="addNewStoreToItemHasBeenClicked()">Add Store To Item</button>
             </div>
         </div>
         <div id="currentGroceryList">
+            <div id="getFrom_Costco">
+                <label class = "category">Costco</label>
+            </div>
+            <div id="getFrom_Ralphs">
+                <label class = "category">Ralphs</label>
 
+            </div>
+            <div id="getFrom_SmartAndFinal">
+                <label class = "category">Smart & Final</label>
+
+            </div>
         </div>
 
 
