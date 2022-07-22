@@ -52,6 +52,25 @@
                     "preferredStore": true
                 }
             }
+        },
+        "Oats": {
+            "needed": false,
+            "acquiredFrom": {
+                "Costco": {
+                    "description": "big_box of Quakers Old Fashioned",
+                    "cost": "15.99",
+                    "forAmount": "10",
+                    "unit": "pound",
+                    "preferredStore": "true"
+                },
+                "Ralphs": {
+                    "description": "Quaker_Old Fashioned",
+                    "cost": "7.99",
+                    "forAmount": "2.6",
+                    "unit": "pound",
+                    "preferredStore": "false"
+                }
+            }
         }
     },
     "Cooking_Supplies": {
@@ -81,14 +100,14 @@
                     "cost": "8.49",
                     "forAmount": "17",
                     "unit": "oz",
-                    "preferredStore": true
+                    "preferredStore": false
                 },
                 "Costco": {
-                    "description": "2_Liter Bottle",
+                    "description": "2L_bottle",
                     "cost": "22.99",
                     "forAmount": "67.6",
                     "unit": "oz",
-                    "preferredStore": "false"
+                    "preferredStore": "true"
                 }
             }
         },
@@ -255,6 +274,13 @@
                     "forAmount": "1",
                     "unit": "pound",
                     "preferredStore": false
+                },
+                "Costco": {
+                    "description": "Sockeye",
+                    "cost": "11.99",
+                    "forAmount": "1",
+                    "unit": "pound",
+                    "preferredStore": "true"
                 }
             }
         }
@@ -406,7 +432,7 @@
             }
         },
         "Bell_Peppers": {
-            "needed": false,
+            "needed": true,
             "acquiredFrom": {
                 "Ralphs": {
                     "cost": "0.99",

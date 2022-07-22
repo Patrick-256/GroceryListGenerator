@@ -1,16 +1,33 @@
 body {
-    background-color:rgb(162, 166, 175);
+    background: linear-gradient(52deg, rgba(0,0,0,1) 0%, rgba(9,121,110,1) 93%);
+    background-color: #000000;
 }
+@font-face {font-family: Irianis; src: url('fonts/IrianisADFStyleStd-Regular.otf');}
+@font-face {font-family: Coinage; src: url('fonts/CoinageCapsKrugerGray.ttf');}
+@font-face {font-family: SFNewRepublic; src: url('fonts/SFNewRepublicSC.ttf');}
+@font-face {font-family: Titillium; src: url('fonts/TitilliumWeb-ExtraLight.ttf');}
+@font-face {font-family: Celtg; src: url('fonts/CELTG.TTF');}
+@font-face {font-family: Quantic; src: url('fonts/Quantico-Regular.ttf');}
 
+h1 {
+    font-family: Celtg;
+}
+hr {
+    color: #0a060a;
+}
 #masterGroceryList {
-    background-color: rgb(123, 165, 243);
+    background-color: #97a0b1;
     display:flex;
     flex-direction: column;
     float: left;
     width: 50%;
+    background: linear-gradient(-90deg, #0b515f  20%, #169ab5 100%);
+
+   
 }
 
 .category {
+    font-family: Coinage;
     text-decoration: underline;
     font-size: 20px;
 }
@@ -18,38 +35,72 @@ body {
 /* Master List Configs */
 
 #masterListDisplay {
-    color: purple
+    color: #0a060a
 }
 
 .groceryItem {
+    font-family: Titillium;
     display: flex;
     gap: 10px;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 2px;
     border-bottom: 1px solid black;
 }
+.groceryItemNeeded {
+    width:1em;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
 
+}
 .groceryItemNeeded:hover {
-    background-color: rgb(24, 223, 100);
+    cursor: pointer;
+    background-color: #41c290;
 }
 
 .groceryItemAcquireFromStore {
-    background-color: rgb(153, 173, 184);
+    background-color: #9bd2e2;
     display: flex;
     gap: 5px;
-    font-size: 12px;
+    font-size: 14px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid rgb(25, 12, 102);
+    border-radius: 4px;
+}
+.GroceryItemCostPerUnit {
+    color: #b83c0f;
 }
 
 /* Add New Items Panel */
 
 #addNewGroceryItemPanel {
-    background-color: rgb(18, 95, 18);
+    padding-top: 1em;
+    background-color: #5ab16d;
     display: grid;
     grid-template-columns: 200px 200px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+.addNewItemLabel {
+    font-family: Quantic;
+    border-bottom: 1px dotted black;
+}
+.addNewItemInput {
+    font-family: Quantic;
+}
+.addNewItemButton {
+    background-color: #5ab16d;
+}
+.addNewItemButton:hover {
+    background-color: #165e25;
 }
 
 /* Current List Configs */
 
 #currentGroceryList {
     float: right;
-    width: 50%;
+    width: 48%;
+    background-color:#41c290;
 }

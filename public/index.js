@@ -31,12 +31,12 @@ async function loadGroceryList()
             var newGroceryItemNeeded = document.createElement("div")
             newGroceryItemNeeded.className = "groceryItemNeeded";
             if(MasterGroceryList[cate][item].needed == true) {
-                newGroceryItemNeeded.textContent = ":)";
-                newGroceryItemNeeded.style.backgroundColor = "green";
+                newGroceryItemNeeded.textContent = "-";
+                newGroceryItemNeeded.style.backgroundColor = "#41c290";
                 newGroceryItemNeeded.onclick = function() { toggleGroceryItemToCurrentList(cate,item,false) }
             } else {
-                newGroceryItemNeeded.textContent = "-_-"
-                newGroceryItemNeeded.style.backgroundColor = "blue";
+                newGroceryItemNeeded.textContent = "+"
+                newGroceryItemNeeded.style.backgroundColor = "#447691";
                 newGroceryItemNeeded.onclick = function() { toggleGroceryItemToCurrentList(cate,item,true) }
             }
             newGroceryItem.appendChild(newGroceryItemNeeded);
@@ -72,7 +72,7 @@ async function loadGroceryList()
                 //store price
                 var newGroceryItemAcquiredFromStorePrice = document.createElement("div");
                 newGroceryItemAcquiredFromStorePrice.className = "groceryItemAcquireFromStorePrice";
-                newGroceryItemAcquiredFromStorePrice.textContent = MasterGroceryList[cate][item].acquiredFrom[stor].cost;
+                newGroceryItemAcquiredFromStorePrice.textContent = '$'+MasterGroceryList[cate][item].acquiredFrom[stor].cost;
                 newGroceryItemAcquiredFromStore.appendChild(newGroceryItemAcquiredFromStorePrice);
 
                 //store amount
