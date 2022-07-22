@@ -9,6 +9,11 @@ async function loadGroceryList()
     //now draw it on the screen
     //Draw it on the master list, if its currently needed, add it to the current grocery list
 
+    //keep track of item costs for each store
+    var CostcoCost = 0;
+    var RalphsCost = 0;
+    var SmartAndFinalCost = 0;
+
     for(const cate in MasterGroceryList)
     {
         //make the category header
@@ -134,9 +139,35 @@ async function loadGroceryList()
                 }
                 document.getElementById(`getFrom_${preferredStoreName}`).appendChild(newGroceryItem.cloneNode(true));
                 document.getElementById("masterListDisplay").appendChild(newGroceryItem);
+
+                //add to the total cost
+                switch(preferredStoreName) {
+                    case "Costco": {
+                        CostcoCost += Number(MasterGroceryList[cate][item].acquiredFrom[preferredStoreName].cost)
+                        break;
+                    }
+                    case "Ralphs": {
+                        RalphsCost += Number(MasterGroceryList[cate][item].acquiredFrom[preferredStoreName].cost)
+                        break;
+                    }
+                    case "SmartAndFinal": {
+                        SmartAndFinalCost += Number(MasterGroceryList[cate][item].acquiredFrom[preferredStoreName].cost)
+                        break;
+                    }
+                    default: {
+                        console.log(`ERROR! item ${MasterGroceryList[cate][item]} has unrecognized store ${preferredStoreName}`);
+                        break;
+                    }
+                }
             }
         }    
     }
+
+    //apply the cost totals
+    document.getElementById("getFrom_Costco_label").textContent = `Costco - $${CostcoCost.toFixed(2)}`;
+    document.getElementById("getFrom_Ralphs_label").textContent = `Ralphs - $${RalphsCost.toFixed(2)}`;
+    document.getElementById("getFrom_SmartAndFinal_label").textContent = `Smart & Final - $${SmartAndFinalCost.toFixed(2)}`;
+
 }
 
 //Add a new item the master grocery list

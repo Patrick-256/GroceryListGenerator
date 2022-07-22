@@ -54,7 +54,7 @@
             }
         },
         "Oats": {
-            "needed": false,
+            "needed": true,
             "acquiredFrom": {
                 "Costco": {
                     "description": "big_box of Quakers Old Fashioned",
@@ -138,7 +138,7 @@
                     "cost": "12.99",
                     "forAmount": "72",
                     "unit": "oz",
-                    "preferredStore": "false"
+                    "preferredStore": true
                 }
             }
         },
@@ -244,6 +244,18 @@
                     "preferredStore": "true"
                 }
             }
+        },
+        "Body_Wash": {
+            "needed": true,
+            "acquiredFrom": {
+                "Ralphs": {
+                    "description": "Olay_Age defying Vitamin E",
+                    "cost": "6.49",
+                    "forAmount": "22",
+                    "unit": "oz",
+                    "preferredStore": "true"
+                }
+            }
         }
     },
     "Meats": {
@@ -302,17 +314,18 @@
             "needed": false,
             "acquiredFrom": {
                 "Costco": {
+                    "description": "tub",
                     "cost": "5.99",
                     "forAmount": "48",
                     "unit": "oz",
-                    "preferredStore": false
+                    "preferredStore": "true"
                 },
                 "Ralphs": {
                     "description": "chobani",
                     "cost": "5.99",
                     "forAmount": "32",
                     "unit": "oz",
-                    "preferredStore": "true"
+                    "preferredStore": false
                 }
             }
         },
@@ -373,14 +386,21 @@
     },
     "Non-Refrigerated_Produce": {
         "Avocados": {
-            "needed": false,
+            "needed": true,
             "acquiredFrom": {
                 "Ralphs": {
                     "description": "sale_price",
                     "cost": "1.50",
                     "forAmount": "1",
                     "unit": "ExtraLargeAvocado",
-                    "preferredStore": true
+                    "preferredStore": false
+                },
+                "Costco": {
+                    "description": "bag_of avocados",
+                    "cost": "10.99",
+                    "forAmount": "6",
+                    "unit": "ct.",
+                    "preferredStore": "true"
                 }
             }
         },
@@ -435,10 +455,18 @@
             "needed": true,
             "acquiredFrom": {
                 "Ralphs": {
+                    "description": "green_bell peppers",
                     "cost": "0.99",
                     "forAmount": "1",
-                    "unit": "pepper",
-                    "preferredStore": true
+                    "unit": "ct.",
+                    "preferredStore": "true"
+                },
+                "Costco": {
+                    "description": "3_colors",
+                    "cost": "7.99",
+                    "forAmount": "6",
+                    "unit": "ct.",
+                    "preferredStore": false
                 }
             }
         },
@@ -454,13 +482,21 @@
             }
         },
         "Mushrooms": {
-            "needed": false,
+            "needed": true,
             "acquiredFrom": {
                 "Ralphs": {
+                    "description": "_",
                     "cost": "4.79",
                     "forAmount": "16",
                     "unit": "oz",
                     "preferredStore": false
+                },
+                "Costco": {
+                    "description": "_",
+                    "cost": "5.49",
+                    "forAmount": "24",
+                    "unit": "oz",
+                    "preferredStore": "true"
                 }
             }
         },
